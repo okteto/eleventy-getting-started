@@ -4,6 +4,7 @@
 In this tutorial we'll talk about how you can Eleventy and [Okteto Cloud](https://cloud.okteto.com) together to quickly create, update and deploy static websites and applications.
 
 ## Pre-requisites
+
 1. Install the [Okteto CLI](https://github.com/okteto/okteto).
 1. Run `okteto login` to create your account in [Okteto Cloud](https://cloud.okteto.com) and link it to your local machine.
 
@@ -11,22 +12,23 @@ In this tutorial we'll talk about how you can Eleventy and [Okteto Cloud](https:
 
 For this tutorial, we'll make a website that shows the world  our favorite Party Parrot gifs, courtesy of https://cultofthepartyparrot.com/
 
-> The finished source code of the tutorial is included [on this repo](https://github.com/rberrelleza/eleventy)
+> The finished source code of the tutorial is included [on this repo](https://github.com/okteto/eleventy)
 
 First, make a directory for your website:
+
 ```console
 mkdir my-parrots
 ```
 
 And a subfolder for our gifs:
-```
+
+```console
 mkdir my-parrots/img
 ```
 
 Go to https://cultofthepartyparrot.com/, and download five of your favorite gifs, and save them inside the `my-parrots/gifs` folder. These are mine:
 
 ```console
-cd my-parrots/gifs
 wget -O my-parrots/img/parrot.gif https://cultofthepartyparrot.com/parrots/hd/parrot.gif
 wget -O my-parrots/img/partyparrot.gif https://cultofthepartyparrot.com/parrots/hd/partyparrot.gif
 wget -O my-parrots/img/jediparrot.gif https://cultofthepartyparrot.com/parrots/hd/jediparrot.gif
@@ -59,7 +61,8 @@ Now let's create our template.  Create a file called `index.html` inside the `my
 Now that we created the initial assets, we'll run  `eleventy` to generate the site. But I don't have `node` or even `eleventy` installed locally. So instead of installing all those dependencies locally and messing up with my local setup, I'm going to launch a preconfigured development environment in Okteto Cloud.
 
 Create an `okteto.yml` manifest file to describe your development environment:
-```
+
+```yaml
 name: eleventy
 image: okteto/eleventy  # this docker image contains all your dev tools
 command:
@@ -86,13 +89,14 @@ Activate your Okteto Cloud namespace:
 ```console
 okteto namespace
 ```
-```
+
+```console
 okteto namespace
  ✓  Updated context 'cloud_okteto_com' in '/Users/ramiro/.kube/config'
 ```
 
 And start your development environment:
-```
+```console
 okteto up 
 ```
 
@@ -207,7 +211,7 @@ In this tutorial we talked about how you can leverage Okteto to make it super si
 - Automatic file synchronization and port-forwarding, so you can keep using your favorite local tools.
 - Almost-instant deploys to the cloud, to show the world your creations. 
 
-Hope you like this! Feel free to [reach out to me](https://twitter.com/rberrelleza) if you have any questions, feedback or ideas on how to make development easier and more accesible to all!
+Hope you like this! Feel free to [reach out to me](https://twitter.com/oktetohq) if you have any questions, feedback or ideas on how to make development easier and more accesible to all!
 
 > This tutorial is based on Zach Leat's amazing [Eleventy Tutorial Level 1](https://www.zachleat.com/web/eleventy-tutorial-level-1/). Check out his blog to learn more about Eleventy!
 
