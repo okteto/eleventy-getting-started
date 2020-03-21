@@ -1,0 +1,7 @@
+name: eleventy
+image: okteto/eleventy
+command:
+- bash
+forward:
+  - 8080:8080
+  - 3001:3001

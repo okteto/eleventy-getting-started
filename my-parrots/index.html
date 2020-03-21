@@ -1,0 +1,23 @@
+---
+title: Party Parrots
+images:
+  - boredparrot.gif
+  - dealwithitparrot.gif
+  - jediparrot.gif
+  - parrot.gif
+  - partyparrot.gif
+---
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <ul>
+      {% for filename in images %}
+      <li><a href="img/{{ filename }}">{{ filename }}</a></li>
+      {% endfor %}
+    </ul>
+    Powered with joy by Eleventy and Okteto.
+  </body>
+</html>
