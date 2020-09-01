@@ -65,6 +65,7 @@ Create an `okteto.yml` manifest file to describe your development environment:
 ```yaml
 name: eleventy
 image: okteto/eleventy  # this docker image contains all your dev tools
+workdir: /okteto
 command:
 - bash
 forward:
