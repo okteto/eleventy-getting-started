@@ -1,5 +1,6 @@
 name: eleventy
 image: okteto/eleventy
+workdir: /okteto
 command:
 - bash
 forward:
